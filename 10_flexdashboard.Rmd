@@ -1,0 +1,48 @@
+---
+title: "Untitled"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    theme:
+        version: 4
+        bootswatch: minty
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(ggplot2)
+library(plotly)
+
+source("08_ggplot2 to make basic plots.R")
+
+```
+
+Column 1 {data-width=650}
+-----------------------------------------------------------------------
+
+### Chart A
+This is the scatter plot between Horse Power and Mile Per Gallon.
+You can change theme by visit: [https://bootswatch.com/litera/](https://bootswatch.com/litera/).
+
+
+```{r}
+f3 %>% plotly::ggplotly()
+```
+
+
+Column 2 {data-width=350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+f1
+```
+
+### Chart C
+
+```{r}
+f5
+```
+

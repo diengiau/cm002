@@ -1,0 +1,133 @@
+---
+title: "Test 04: Logit Regressions"
+author: "Richard Dien Giau Bui"
+format: revealjs
+editor: visual
+---
+
+## Load required packages
+
+```{r}
+#| echo: true
+#| warning: false
+library(tidyverse) 
+# if you're using macOS, you can run: library(dplyr)
+library(skimr)
+library(broom)
+```
+
+## When the dependent variable is a dummy
+
+-   Dummy: a variable receives only two possible values: 1 or 0
+
+-   Examples:
+
+    -   Pass (1) and Fail (0)
+
+    -   Got COVID (1) and not (0)
+
+    -   Got accepted to a top university (1) and a lower one (0)
+
+    -   A firm filed bankruptcy (1) and others (0)
+
+## Let's use `Hsb` data again as an example
+
+```{r}
+#| echo: true
+#| warning: false
+Hsb = read_csv("data/raw/hsb.csv")
+Hsb = Hsb %>% 
+  mutate(
+    race = as.factor(race),
+    schtyp = as.factor(schtyp),
+    prog = as.factor(prog)
+  )
+```
+
+## Run an OLS regression with a dummy dependent variable
+
+-   Take the `female`: =1 for female student and =0 for male student
+
+-   Imagine we want to train data so that if we know the student's reading, writing, math, and science scores, the model will guess if the student is female or male student
+
+-   How to run this model by OLS regression?
+
+## OLS
+
+```{r}
+#| echo: true
+m1 = lm(female ~ read + write + math + science, data=Hsb)
+summary(m1)
+```
+
+## Discussion
+
+-   We have a model with meaningful coefficients,
+
+-   Everything is fine
+
+-   Like a movie/novel, every bad thing happens with a **BUT**
+
+> ... **BUT**, let's check the fitted value
+
+## Question
+
+-   Remember which function to get the fitted and residual from a regression?
+
+## `augment`
+
+```{r}
+#| echo: true
+augment(m1)
+```
+
+## Discussion
+
+-   Do you notice anything unconventional in the `.fitted` column?
+
+## Logit regression
+
+-   When facing the dummy dependents, it is better to use logit regression
+
+-   In R, we use the function `glm`
+
+```{r}
+m2 = glm(female ~ read + write + math + science, data=Hsb, family = "binomial")
+summary(m2)
+```
+
+## Note
+
+-   The logit formula is not standard as the OLS, so we don't care much about the range of the fitted value anymore
+
+-   Simply just look at the sign (positive or negative) of the coefficients, rather than the size of coefficients
+
+-   The details of math behind the logit regression is skipped for simplicity in this class
+
+    -   If you want to learn more, maybe you can read yourself. My recommendation is Wooldridge textbook on Introduction Econometrics
+
+## Logistic regression as a classification tool in machine learning
+
+-   Now is the age of machine learning
+
+-   Logit regression is one simple algorithm in the classification problem
+
+    -   Specifically, if we have a data with a label with two values (Yes and No, e.g., cancer vs non-cancer), we can train a model to predict the likelihood a person has the cancer
+
+    -   Applied in many fields: medicine, traffic, finance, ...
+
+-   Other sophisticated algorithms such as tree classification, random forest, neural network, ...
+
+## Next
+
+-   You're armed with many statistical tools now
+
+-   You can find research topics by yourself and do your own statistical analysis:
+
+    -   Clean data
+
+    -   Statistical tests
+
+    -   ... then report the results to me
+
+-   Next lectures focus on how to make good reporting results to audience
