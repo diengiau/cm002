@@ -37,7 +37,8 @@ Column 2 {data-width=350}
 ### Chart B
 
 ```{r}
-f1
+m1 = lm(mpg ~ hp + wt, data = mtcars) 
+broom::tidy(m1) %>% knitr::kable(digits = 3)
 ```
 
 ### Chart C
