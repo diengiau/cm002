@@ -31,6 +31,8 @@ f3 = Data %>%
   ggplot(aes(x=hp, y=mpg)) + geom_point() 
 f3
 
+f3 + geom_smooth(method = "lm")
+
 # 4. Line plots
 f4 = Data %>%
   ggplot(aes(x=1:nrow(Data), y=mpg)) + geom_line() 
@@ -47,7 +49,7 @@ f4 + xlab("Row number") + ylab("Mile per gallon") + ggtitle("The line plot of MP
 f5 = f4 + xlab("Row number") + ylab("Mile per gallon") + ggtitle("The line plot of MPG") +
   ggthemes::theme_economist()
 
-# 5. Interactive plots
+# 6. Interactive plots
 plotly::ggplotly(f3)
 
 plotly::ggplotly(f5)
