@@ -1,0 +1,68 @@
+---
+title: "A sample report"
+format: docx
+editor: visual
+---
+
+## Regression
+
+I will run a regression.
+
+```{r}
+#| echo: false
+#| warning: false
+
+library(tidyverse) 
+# if you're using macOS, you can run: library(dplyr)
+library(skimr)
+library(broom)
+library(modelr)
+
+Hsb = read_csv("data/raw/hsb.csv")
+Hsb = Hsb %>% 
+  mutate(
+    race = as.factor(race),
+    schtyp = as.factor(schtyp),
+    prog = as.factor(prog)
+  )
+
+
+```
+
+Then, I will show the result automatically.
+
+##  WHAT YOU NEED TO DO NOW?
+
+**Step 1: Run a regression between:**
+
+Y: read
+
+X: write, math, science, socst
+
+```{r}
+#| echo: true
+#| warning: false
+ols_reg_fit = lm(formula = read ~ write + math + science + socst, data = Hsb)
+Coef = tidy(ols_reg_fit)
+```
+
+**Step 2: Show me the coefficient for `math` only by using the tidy function.**
+
+The coefficient is equal to:
+
+```{r}
+#| echo: false
+#| warning: false
+b = Coef %>% filter(term == "math") %>% pull(estimate) %>% round(digits = 3)
+b
+```
+
+**Step 3: The coefficient of `math` is significant or not?**
+
+```{r}
+#| echo: false
+pvalue = Coef %>% filter(term == "math") %>% pull(p.value)
+ifelse(pvalue<0.05, "Significant", "Not Significant")
+```
+
+Make a report in WORD format.
