@@ -6,34 +6,62 @@ library(ggthemes)
 Data = mtcars
 
 
-# 1. Histogram
+# PART A: Aggregation or summarize data -----------------------------------
+
+# 1. For categorical variables: count
+CountCyl = Data %>% count(cyl)
+CountCyl
+
+# 2. For numeric variables: group_by and summarize
+Mpg_Mean = Data %>% 
+  group_by(cyl) %>% 
+  summarize(
+    mpg_mean = mean(mpg, na.rm=TRUE)
+  ) %>% 
+  ungroup()
+Mpg_Mean
+
+# a faster way:
+Mpg_Mean = Data %>% 
+  summarize(
+    mpg_mean = mean(mpg, na.rm=TRUE), .by = c(cyl)
+  ) 
+Mpg_Mean
+
+
+# PART B: Some important plots --------------------------------------------
+
+
+# 1. Histogram: for numeric var
 hist(Data$mpg)
 ggplot(Data, aes(mpg)) + geom_histogram()
 ggplot(Data, aes(mpg)) + geom_density()
 
 f1 = ggplot(Data, aes(mpg)) + geom_density()
+f1
 
-# 2. Bar plots
+# 2. Bar plots: for category count or summarized data
 # count how many obs per cyl
-Data %>% count(cyl)
-Data %>% 
-  count(cyl) %>% 
-  ggplot(aes(x=cyl, y=n)) + geom_bar(stat = "identity")
+CountCyl = Data %>% count(cyl)
+CountCyl
 
-f2 = Data %>% 
-  count(cyl) %>% 
+f2 = CountCyl %>% 
   ggplot(aes(x=cyl, y=n)) + geom_bar(stat = "identity")
 f2
 
-# 3. Scatter plots + regression line
+# Question: can you draw the bar plot for mean of mpg by different cyl group?
+  
+
+# 3. Scatter plots + regression line: for two numeric variables
 
 f3 = Data %>%
   ggplot(aes(x=hp, y=mpg)) + geom_point() 
 f3
 
-f3 + geom_smooth(method = "lm")
+f3 = f3 + geom_smooth(method = "lm")
+f3
 
-# 4. Line plots
+# 4. Line plots: for time series
 f4 = Data %>%
   ggplot(aes(x=1:nrow(Data), y=mpg)) + geom_line() 
 f4
