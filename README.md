@@ -13,9 +13,9 @@
 
 ## Change logs
 
+- 2025/2/28: added first half of 2025 class
 - 2024/2/21: start the repo
 - 2024/2/21: add full materials
-- 2025/2/28: added first half of 2025 class
 
 ## Contact
 
