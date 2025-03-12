@@ -51,7 +51,11 @@ y = sqrt(4)
 
 -   Not run and just give information
 
-`{r} # two ways to take square of a number in R: 2*2 3^2}`
+```{r}
+# two ways to take square of a number in R: 
+3*3 
+3^2
+```
 
 ## Four main data types in R
 
@@ -202,10 +206,9 @@ mtcars[1,]
 
 ## Save dataframe from R to a file
 
-- Save output dataframe from R to a file to use later
-- Many possible file types: CSV, `RDS`, `parquet`
-    - E.g., `saveRDS(OUTPUT, "path_to_file.rds")`, `readr::write_csv(OUTPUT, "path_to_file.csv")`
-
+-   Save output dataframe from R to a file to use later
+-   Many possible file types: CSV, `RDS`, `parquet`
+    -   E.g., `saveRDS(OUTPUT, "path_to_file.rds")`, `readr::write_csv(OUTPUT, "path_to_file.csv")`
 
 ## Some tasks with the dataframe
 
@@ -226,7 +229,7 @@ mtcars[1,]
 ## Make data larger
 
 | Function | When to use |
-|------------------------------------|------------------------------------|
+|----|----|
 | `mutate` | Create new variables |
 | `transmute` | Also create new variables, but keep only these new variables and drop all old variables |
 
