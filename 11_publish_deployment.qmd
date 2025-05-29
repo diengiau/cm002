@@ -1,0 +1,76 @@
+---
+title: "Deployment or publish your dashboard"
+author: "Richard"
+format: revealjs
+editor: visual
+---
+
+## Why online?
+
+-   Now is 2025, everything is online
+
+-   More audience
+
+-   More opportunities
+
+## Example: my dashboard
+
+[My awesome dashboard](https://diengiau.quarto.pub/an-awesome-dashboard/)
+
+## How to do that?
+
+-   If you don't have Quarto in your computer, you may need to install it from:
+
+-   Step 1: Create one account at Quarto Pub: <https://quartopub.com/>
+
+-   Step 2: Sign in it in browser
+
+-   Step 3: Open terminal or CMD (in Windows)
+
+    -   Type: `quarto publish quarto-pub document_name.qmd`
+
+    -   Authorize the account in browser
+
+    -   Return to the terminal: choose the account and name of the webpage that will be published to your Quarto Pub
+
+-   Step 4: It will appear online
+
+## Demo in class
+
+Demo time.
+
+## Final assignment
+
+-   You can choose either format to prepare for your final report:
+
+    -   A plot only
+
+    -   A one-page report
+
+    -   A one-page dashboard
+
+    -   A one-page slide
+
+-   Make it beautiful, tuitively, and self-contained. If you think you need to add some discussion paragraphs to make it clear for us, please do it in the "subtitle" or "caption" of the plot.
+
+-   Publish it to Quarto Pub and give us the link
+
+## Extra homework
+
+-   Some of you may need to improve your scores
+
+-   You can do another assignment as follows:
+
+    -   Draw a very ugly plot first
+
+    -   Then tell us how you can improve to make it more beautiful
+
+    -   So you need to provide two plots: an ugly one and a beautiful one
+
+    -   Also add any details or explanation if need to make us understanding your plot's intuition
+
+    -   Finally, publish to Quarto Pub and give us the link
+
+## Deadline
+
+Deadline of two assignments/homework is Week 18.
