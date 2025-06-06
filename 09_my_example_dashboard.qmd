@@ -1,0 +1,30 @@
+---
+title: "An awesome dashboard"
+author: "Richard"
+format: 
+  dashboard:
+    theme: united
+---
+
+```{r setup, include=FALSE}
+source("08_ggplot2 to make basic plots.R")
+```
+
+
+## Row {height=50%}
+
+```{r}
+f1
+```
+
+
+## Row {height=50%}
+
+```{r}
+f2
+```
+
+```{r}
+f3
+```
+
