@@ -2,7 +2,7 @@
 
 - Hi folks, my name is **Richard Bui**, who is an Associate Professor of Finance at YZU, Taiwan. 
 - This is official source code for my class CM002 (G Fundamental Computer Programming–Statistical and Quantitative Analysis) class at YZU.
-- This update: for Spring class ~2024~ 2025.
+- This update: for Spring class ~2024~ ~2025~ 2026.
 
 ## Content:
 
@@ -22,5 +22,3 @@
 ## Contact
 
 [Richard](https://diengiau.github.io/)
-
-
