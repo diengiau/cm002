@@ -23,5 +23,3 @@
 ## Contact
 
 [Richard](https://diengiau.github.io/)
-
-
