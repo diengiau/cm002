@@ -2,7 +2,7 @@
 
 - Hi folks, my name is **Richard Bui**, who is an Associate Professor of Finance at YZU, Taiwan. 
 - This is official source code for my class CM002 (G Fundamental Computer Programming–Statistical and Quantitative Analysis) class at YZU.
-- This update: for Spring class ~2024~ 2025.
+- This update: for Spring class ~2024~ ~2025~ 2026.
 - **You can read the corresponding website of this repository at: https://deepwiki.com/diengiau/cm002**
 
 ## Content:
@@ -15,6 +15,7 @@
 
 ## Change logs
 
+- 2026/3/5: add Syllabus 2026
 - 2025/5/29: complete all slides
 - 2025/2/28: added first half of 2025 class
 - 2024/2/21: start the repo
