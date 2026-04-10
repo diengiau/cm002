@@ -52,6 +52,7 @@ y = sqrt(4)
 -   Not run and just give information
 
 ```{r}
+#| echo: true
 # two ways to take square of a number in R: 
 3*3 
 3^2
@@ -186,6 +187,7 @@ typeof(d)
 
 ```{r}
 #| echo: true
+mtcars[1:5, 1:4]
 mtcars[,1]
 mtcars[1,]
 ```
@@ -229,7 +231,7 @@ mtcars[1,]
 ## Make data larger
 
 | Function | When to use |
-|----|----|
+|------------------------------------|------------------------------------|
 | `mutate` | Create new variables |
 | `transmute` | Also create new variables, but keep only these new variables and drop all old variables |
 
