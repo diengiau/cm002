@@ -21,6 +21,7 @@
 
 ## Change logs
 
+- 2026/4/17: add videos till Week 8
 - 2026/3/5: add Syllabus 2026
 - 2025/5/29: complete all slides
 - 2025/2/28: added first half of 2025 class
